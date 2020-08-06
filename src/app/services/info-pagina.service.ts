@@ -16,23 +16,23 @@ export class InfoPaginaService {
     this.cargarInfo();
     this.cargarEquipo();
   }
-  private cargarInfo(){
+  private cargarInfo() {
         // console.log('Sevicio disparado');
     this.http.get('assets/data/data-pagina.json')
-    .subscribe((resp:InfoPagina) => {
+    .subscribe((resp: InfoPagina ) => {
       this.cargada = true;
       this.info = resp;
 
-      console.log( resp );
+      // console.log( resp );
       // console.log( resp['twitter'] );
 
     });
   }
-  private cargarEquipo(){
+  private cargarEquipo() {
     this.http.get('https://angular-html-6691c.firebaseio.com/equipo.json')
     .subscribe((resp: any[]) => {
       this.equipo = resp;
-      console.log(resp);
+      // console.log(resp);
     });
 
   }
