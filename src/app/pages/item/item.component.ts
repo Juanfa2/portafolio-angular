@@ -12,7 +12,10 @@ export class ItemComponent implements OnInit {
 
   producto: ProductoDescripcion;
   id: string;
-
+  anio: number = new Date().getFullYear();
+  numeroMes: number = new Date().getMonth();
+  mes: string;
+  meses = ['January', 'February', 'March', 'April', 'May' , 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   constructor( private route: ActivatedRoute,
                public productoService: ProductosService ) { }
 
@@ -26,6 +29,7 @@ export class ItemComponent implements OnInit {
             this.id = parametros.id;
             this.producto = producto;
             // console.log(producto);
+            this.mes = this.meses[this.numeroMes];
         });
 
     });
